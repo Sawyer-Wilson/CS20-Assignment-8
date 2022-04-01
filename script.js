@@ -1,22 +1,3 @@
-
-
-// function updateQuanity()
-// {
-//     alert("hello")
-// }
-
-// $('.selectQuantity').on('change', function() {
-//     alert("hello")
-// });
-
-// document.getElementsByClassName('selectQuantity').addEventListener
-
-// .on('change', function() {
-//     alert("hello")
-// });
-
-
-
 // recalculates all the costs based on the quantities selected
 function updateCosts() 
 {
