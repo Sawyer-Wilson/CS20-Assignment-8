@@ -30,15 +30,16 @@ function updateCosts()
         totalCost.value = (quantity * cost).toFixed(2);
         subtotal += parseFloat(totalCost.value);
         if (quantity > 0) {
-            order.push([quantity, menuItems[i].cost.name, totalCost]);
+            order.push([quantity, menuItems[i].name, totalCost.value]);
         }
     }
-    tax = subtotal * 0.0625;
-    total = subtotal + tax;
+    subtotal = subtotal.toFixed(2)
+    tax = (subtotal * 0.0625).toFixed(2);
+    total = (subtotal + tax).toFixed(2);
 
-    $('input#subtotal').val(subtotal.toFixed(2));
-    $('input#tax').val(tax.toFixed(2));
-    $('input#total').val(total.toFixed(2));
+    $('input#subtotal').val(subtotal);
+    $('input#tax').val(tax);
+    $('input#total').val(total);
 }
 
 
