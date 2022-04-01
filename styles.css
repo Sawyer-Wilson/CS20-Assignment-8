@@ -5,3 +5,15 @@
 label {
     display: block;
 }
+#details-tbl {
+    border-collapse: collapse;
+    margin: 15px 30px;
+    width: 50%;
+}
+
+#details-tbl td {
+    border: 1px solid;
+    text-align: left;
+    padding: 5px;
+    width: 50%;
+}
