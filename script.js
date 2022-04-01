@@ -20,6 +20,7 @@
 // recalculates all the costs based on the quantities selected
 function updateCosts() 
 {
+    order = new Array();
     table = document.querySelector('table')
     subtotal = 0;
     for (i = 0; i < 5; i++) {
@@ -28,6 +29,7 @@ function updateCosts()
         totalCost = table.rows[i + 1].cells[3].querySelector('input');
         totalCost.value = (quantity * cost).toFixed(2);
         subtotal += parseFloat(totalCost.value);
+        order.push([quantity, menuItems[i].cost.name, totalCost]);
     }
     tax = subtotal * 0.0625;
     total = subtotal + tax;
@@ -99,6 +101,7 @@ function validateForm()
 
         alert("Thank you for placing an order!");
         window.details = {
+            'order': order,
             'subtotal': subtotal,
             'tax': tax,
             'total': total
