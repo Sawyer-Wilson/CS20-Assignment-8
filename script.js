@@ -30,7 +30,7 @@ function updateCosts()
         totalCost.value = (quantity * cost).toFixed(2);
         subtotal += parseFloat(totalCost.value);
         if (quantity > 0) {
-            order.push([quantity, menuItems[i].cost.name, totalCost]);
+            order.push([quantity, menuItems[i].name, totalCost.value]);
         }
     }
     tax = subtotal * 0.0625;
