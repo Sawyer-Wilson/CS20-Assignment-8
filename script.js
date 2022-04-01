@@ -104,9 +104,9 @@ function validateForm()
         alert("Thank you for placing an order!");
         window.details = {
             'order': order,
-            'subtotal': subtotal.toFixed(2),
-            'tax': tax.toFixed(2),
-            'total': total.toFixed(2),
+            'subtotal': subtotal,
+            'tax': tax,
+            'total': total,
             'pickupTime': pickupTime
         }
         window.open('details.html');

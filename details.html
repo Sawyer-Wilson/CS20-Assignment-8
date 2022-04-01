@@ -34,9 +34,9 @@
             }
 
             // display totals and tax
-            table.append('<tr><td>Subtotal:</td><td>$' + details.subtotal + '</td></tr>');
-            table.append('<tr><td>Tax:</td><td>$' + details.tax + '</td></tr>');
-            table.append('<tr><td>Total:</td><td>$' + details.total + '</td></tr>');
+            table.append('<tr><td>Subtotal:</td><td>$' + details.subtotal.toFixed(2) + '</td></tr>');
+            table.append('<tr><td>Tax:</td><td>$' + details.tax.toFixed(2) + '</td></tr>');
+            table.append('<tr><td>Total:</td><td>$' + details.total.toFixed(2) + '</td></tr>');
         })
     </script>
 </body>
