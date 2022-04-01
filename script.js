@@ -35,7 +35,7 @@ function updateCosts()
     }
     subtotal = subtotal.toFixed(2)
     tax = (subtotal * 0.0625).toFixed(2);
-    total = (subtotal + tax).toFixed(2);
+    total = (subtotal + tax);
 
     $('input#subtotal').val(subtotal);
     $('input#tax').val(tax);
