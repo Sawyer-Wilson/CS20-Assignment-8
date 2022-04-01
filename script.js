@@ -29,7 +29,9 @@ function updateCosts()
         totalCost = table.rows[i + 1].cells[3].querySelector('input');
         totalCost.value = (quantity * cost).toFixed(2);
         subtotal += parseFloat(totalCost.value);
-        order.push([quantity, menuItems[i].cost.name, totalCost]);
+        if (quantity > 0) {
+            order.push([quantity, menuItems[i].cost.name, totalCost]);
+        }
     }
     tax = subtotal * 0.0625;
     total = subtotal + tax;

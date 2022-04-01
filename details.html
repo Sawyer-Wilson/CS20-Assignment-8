@@ -17,6 +17,17 @@
 
     <script>
         console.log(window.opener.details)
+
+
+        details = window.opener.details;
+        order = details.order;
+        table = $('#details.tbl');
+        for (i = 0; i < order.length; i++) {
+            table.append('<tr><td>' + order[i][0] + ' ' + order[i][1] + '</td><td>' + '$' + order[i][2] + '</td></tr>')
+        }
+        table.append('<tr><td>Subtotal:</td><td>' + details.subtotal + '</td></tr>');
+        table.append('<tr><td>Tax:</td><td>' + details.tax + '</td></tr>');
+        table.append('<tr><td>Total:</td><td>' + details.total + '</td></tr>');
     </script>
 </body>
 </html>
