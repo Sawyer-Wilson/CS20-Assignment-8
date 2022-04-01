@@ -30,16 +30,15 @@ function updateCosts()
         totalCost.value = (quantity * cost).toFixed(2);
         subtotal += parseFloat(totalCost.value);
         if (quantity > 0) {
-            order.push([quantity, menuItems[i].name, totalCost.value]);
+            order.push([quantity, menuItems[i].cost.name, totalCost]);
         }
     }
-    subtotal = subtotal.toFixed(2)
-    tax = (subtotal * 0.0625).toFixed(2);
-    total = (subtotal + tax);
+    tax = subtotal * 0.0625;
+    total = subtotal + tax;
 
-    $('input#subtotal').val(subtotal);
-    $('input#tax').val(tax);
-    $('input#total').val(total);
+    $('input#subtotal').val(subtotal.toFixed(2));
+    $('input#tax').val(tax.toFixed(2));
+    $('input#total').val(total.toFixed(2));
 }
 
 
@@ -105,9 +104,9 @@ function validateForm()
         alert("Thank you for placing an order!");
         window.details = {
             'order': order,
-            'subtotal': subtotal,
-            'tax': tax,
-            'total': total,
+            'subtotal': subtotal.toFixed(2),
+            'tax': tax.toFixed(2),
+            'total': total.toFixed(2),
             'pickupTime': pickupTime
         }
         window.open('details.html');
