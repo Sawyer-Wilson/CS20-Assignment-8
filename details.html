@@ -14,22 +14,30 @@
     </header>
 
     <main>
-        <table id="details-tbl"></table>
+        <p id="pickup-time"></p>
+        <table id="details-tbl"><tr></tr></table>
     </main>
 
     <script>
-        console.log(window.opener.details)
+        $(document).ready(function(){
+            // Get data from opener page
+            details = window.opener.details;
+            order = details.order;
+            table = $('#details-tbl');
 
+            // display pickup time
+            $('#pickup-time').html('Your pickup time is ' + details.pickupTime);
 
-        details = window.opener.details;
-        order = details.order;
-        table = $('#details.tbl');
-        for (i = 0; i < order.length; i++) {
-            table.append('<tr><td>' + order[i][0] + ' ' + order[i][1] + '</td><td>' + '$' + order[i][2] + '</td></tr>')
-        }
-        table.append('<tr><td>Subtotal:</td><td>' + details.subtotal + '</td></tr>');
-        table.append('<tr><td>Tax:</td><td>' + details.tax + '</td></tr>');
-        table.append('<tr><td>Total:</td><td>' + details.total + '</td></tr>');
+            // display items ordered
+            for (i = 0; i < order.length; i++) {
+                table.append('<tr><td>' + order[i][0] + ' ' + order[i][1] + '</td><td>' + '$' + order[i][2] + '</td></tr>')
+            }
+
+            // display totals and tax
+            table.append('<tr><td>Subtotal:</td><td>$' + details.subtotal + '</td></tr>');
+            table.append('<tr><td>Tax:</td><td>$' + details.tax + '</td></tr>');
+            table.append('<tr><td>Total:</td><td>$' + details.total + '</td></tr>');
+        })
     </script>
 </body>
 </html>

@@ -106,7 +106,8 @@ function validateForm()
             'order': order,
             'subtotal': subtotal,
             'tax': tax,
-            'total': total
+            'total': total,
+            'pickupTime': pickupTime
         }
         window.open('details.html');
     }
